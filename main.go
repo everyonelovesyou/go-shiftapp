@@ -10,6 +10,9 @@ func main() {
 
 	mux.HandleFunc("/", handler)
 
+	fileServer := http.FileServer(http.Dir("./public"))
+	mux.Handle("/assets/", http.StripPrefix("/assets/", fileServer))
+
 	server := http.Server{
 		Addr:    ":8080",
 		Handler: mux,
@@ -18,8 +21,7 @@ func main() {
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {
-	tpl := `<p>{{ . }}</p>`
-	data := "Hello Kitty!"
-	t := template.Must(template.New("hello").Parse(tpl))
+	data := []string{"mon", "tue", "wed", "thu", "fri"}
+	t := template.Must(template.ParseFiles("tpl/layout.html", "tpl/index.html", "tpl/component/day.html"))
 	t.Execute(w, data)
 }

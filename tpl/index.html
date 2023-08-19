@@ -1,0 +1,9 @@
+{{ define "content" }}
+<div class="container content-group">
+    <section>
+        {{ range . }}
+            {{ template "day" . }}
+        {{ end }}
+    </section>
+</div>
+{{ end }}
