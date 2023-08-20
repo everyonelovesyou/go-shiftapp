@@ -1,27 +1,27 @@
 package main
 
 import (
+	"fmt"
 	"html/template"
 	"net/http"
+
+	"github.com/gin-gonic/gin"
 )
 
 func main() {
-	mux := http.NewServeMux()
+	router := gin.Default()
 
-	mux.HandleFunc("/", handler)
+	router.GET("/", handler)
+	router.StaticFS("/assets", http.Dir("./public"))
 
-	fileServer := http.FileServer(http.Dir("./public"))
-	mux.Handle("/assets/", http.StripPrefix("/assets/", fileServer))
-
-	server := http.Server{
-		Addr:    ":8080",
-		Handler: mux,
+	err := router.Run("localhost:8080")
+	if err != nil {
+		fmt.Println("起動失敗しちゃった", err)
 	}
-	server.ListenAndServe()
 }
 
-func handler(w http.ResponseWriter, r *http.Request) {
+func handler(ctx *gin.Context) {
 	data := []string{"mon", "tue", "wed", "thu", "fri"}
 	t := template.Must(template.ParseFiles("tpl/layout.html", "tpl/index.html", "tpl/component/day.html"))
-	t.Execute(w, data)
+	t.Execute(ctx.Writer, data)
 }
