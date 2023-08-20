@@ -2,9 +2,8 @@
 
 @import url('./css/theme.css');
 /* Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Emoji:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap');
 
 /*
  * My Custom CSS Reset
@@ -74,10 +73,10 @@ ul {
 }
 
 body {
-    font-family: 'Zen Maru Gothic', 'Noto Sans JP', メイリオ, Meiryo, sans-serif;
+    font-family: 'Noto Sans JP', メイリオ, Meiryo, sans-serif;
     font-size: 1rem;
     font-weight: 400;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     background: var(--md-sys-color-background);
     color: var(--md-sys-color-on-background);
 }
@@ -86,8 +85,7 @@ body {
     width: 100%;
     padding-right: 0.75rem;
     padding-left: 0.75rem;
-    margin-left: auto;
-    margin-right: auto;
+    margin-inline: auto;
 }
 
 @media (min-width: 576px) {
@@ -108,6 +106,12 @@ body {
     }
 }
 
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
 /*
  * header
  */
@@ -120,12 +124,19 @@ header {
     border-bottom: 1px solid var(--md-sys-color-outline);
 }
 
-header .nav-item {
+
+header > .container {
     height: 4rem;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+}
+
+header h1 {
+    margin-bottom: 0;
+    font-weight: 600;
+    font-size: 1.75rem;
 }
 
 /*
@@ -134,25 +145,50 @@ header .nav-item {
 
 main {
     margin-top: 4rem;
+    padding-top: 2rem;
 }
 
-.content-group {
+.column-wrapper {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
     align-content: flex-start;
 }
 
-section {
-    padding: 1rem 0;
-    margin-left: auto;
-    margin-right: auto;
+@media (min-width: 992px) {
+    .column-wrapper {
+        flex-wrap: nowrap;
+    }
 }
 
-.day-group {
+section {
     padding: 1rem 0;
-    margin-left: auto;
-    margin-right: auto;
+    margin-inline: auto;
+}
+
+.column-wrapper > section {
+    width: 100%;
+}
+
+section > h2 {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+
+form#weekdays {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.input-group,
+.action-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
     text-align: center;
 }
 
@@ -166,6 +202,11 @@ label {
     margin: 0.25rem;
     padding: 0.4rem 0.8rem;
     line-height: 1.5;
+}
+
+input[type="date"],
+input[type="time"] {
+    padding-right: 0.4rem;
 }
 
 input,
@@ -191,6 +232,17 @@ textarea {
     background-color: var(--md-sys-color-surface-variant);
 }
 
+section > div:has(textarea#result) {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+textarea#result {
+    width: 100%;
+    max-width: 400px;
+    min-width: 200px;
+}
 
 label.form-label {
     display: inline-block;
@@ -203,7 +255,7 @@ label.form-label {
     font-weight: 500;
 }
 
-.day-group > label.form-label {
+.input-group > label.form-label {
     text-transform: capitalize;
 }
 
@@ -221,10 +273,23 @@ button {
     font-weight: 500;
 }
 
+button.outlined {
+    color: var(--md-sys-color-primary);
+    border: 1px solid var(--md-sys-color-outline);
+}
+
 button:hover {
     background-color: var(--md-sys-color-surface-variant);
 }
 
+button.filled {
+    color: var(--md-sys-color-on-primary);
+    background-color: var(--md-sys-color-primary);
+}
+
+button.filled:hover {
+    background-color: var(--md-ref-palette-primary90);
+}
 
 button.icon {
     padding: 0;

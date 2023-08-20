@@ -1,9 +1,0 @@
-{{ define "day" }}
-    {{ $day := . }}
-    <div class="day-group">
-        <label for="{{$day}}_st" class="form-label">{{$day}}</label>
-        <input type="date" name="weekday" id="{{$day}}">
-        <input type="time" name="st_weekday" id="{{$day}}_st" step="300" />
-        <input type="time" name="ed_weekday" id="{{$day}}_ed" step="300" />
-    </div>
-{{ end }}

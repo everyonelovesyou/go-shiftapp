@@ -1,0 +1,14 @@
+{{ define "contents" }}
+<div class="container column-wrapper">
+    <section>
+        <h2>来週の勤務予定を入力</h2>
+        {{ template "form" . }}
+    </section>
+    <section>
+        <h2>いい感じにフォーマットするよ</h2>
+        <div>
+            <textarea id="result"></textarea>
+        </div>
+    </section>
+</div>
+{{ end }}

@@ -22,6 +22,6 @@ func main() {
 
 func handler(ctx *gin.Context) {
 	data := []string{"mon", "tue", "wed", "thu", "fri"}
-	t := template.Must(template.ParseFiles("tpl/layout.html", "tpl/index.html", "tpl/component/day.html"))
+	t := template.Must(template.ParseFiles("tmpl/layout.html", "tmpl/index.html", "tmpl/ctt/form.html"))
 	t.Execute(ctx.Writer, data)
 }
