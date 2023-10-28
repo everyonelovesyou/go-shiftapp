@@ -1,4 +1,4 @@
-import { setInitialTheme, toggleTheme } from './js/theme.js';
+import { setInitialTheme, toggleTheme } from './theme/theme.js';
 
 document.addEventListener('DOMContentLoaded', setInitialTheme);
 

@@ -1,0 +1,79 @@
+/*
+ * main contents
+ */
+
+main {
+    margin-top: 4rem;
+    padding-top: 2rem;
+}
+
+.column-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-content: flex-start;
+}
+
+@media (min-width: 992px) {
+    .column-wrapper {
+        flex-wrap: nowrap;
+    }
+}
+
+section {
+    padding: 1rem 0;
+    margin-inline: auto;
+}
+
+.column-wrapper>section {
+    width: 100%;
+}
+
+section>h2 {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+
+form#weekdays {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.input-group,
+.action-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+}
+
+section>div:has(textarea#result) {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+textarea#result {
+    width: 100%;
+    max-width: 400px;
+    min-width: 200px;
+}
+
+label.form-label {
+    display: inline-block;
+    padding-left: 0;
+    padding-right: 0;
+    width: 3.5rem;
+    font-size: 1.25rem;
+    line-height: 1.2;
+    /* (1.5 / 1.25) */
+    font-weight: 500;
+}
+
+.input-group>label.form-label {
+    text-transform: capitalize;
+}

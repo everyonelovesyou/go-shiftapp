@@ -1,0 +1,11 @@
+@use "./base";
+@use "./components";
+@use "./header";
+@use "./main";
+
+// Theme
+@import "/assets/theme/theme.css";
+
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Noto+Emoji:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap');

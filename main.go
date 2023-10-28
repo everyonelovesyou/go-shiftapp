@@ -12,7 +12,7 @@ func main() {
 	router := gin.Default()
 
 	router.GET("/", handler)
-	router.StaticFS("/assets", http.Dir("./public"))
+	router.StaticFS("/assets", http.Dir("./src/public"))
 
 	err := router.Run("localhost:8080")
 	if err != nil {
@@ -22,6 +22,11 @@ func main() {
 
 func handler(ctx *gin.Context) {
 	data := []string{"mon", "tue", "wed", "thu", "fri"}
-	t := template.Must(template.ParseFiles("tmpl/layout.html", "tmpl/index.html", "tmpl/ctt/form.html"))
+	t := template.Must(template.ParseFiles(
+		// これ関数にしたい
+		"./src/tmpl/layout.html",
+		"./src/tmpl/index.html",
+		"./src/tmpl/ctt/form.html",
+	))
 	t.Execute(ctx.Writer, data)
 }

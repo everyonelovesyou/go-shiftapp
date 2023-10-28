@@ -1,0 +1,26 @@
+/*
+ * header
+ */
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background: var(--md-sys-color-background);
+    border-bottom: 1px solid var(--md-sys-color-outline);
+}
+
+
+header>.container {
+    height: 4rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header h1 {
+    margin-bottom: 0;
+    font-weight: 600;
+    font-size: 1.75rem;
+}

@@ -1,0 +1,106 @@
+/*
+ * My Custom CSS Reset
+ * https://www.joshwcomeau.com/css/custom-css-reset/
+ */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+button {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    cursor: pointer;
+    text-transform: none;
+    appearance: button;
+    -moz-appearance: button;
+    -webkit-appearance: button;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+#root,
+#__next {
+    isolation: isolate;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+body {
+    font-family: 'Noto Sans JP', メイリオ, Meiryo, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    background: var(--md-sys-color-background);
+    color: var(--md-sys-color-on-background);
+}
+
+.container {
+    width: 100%;
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
+    margin-inline: auto;
+}
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
