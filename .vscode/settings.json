@@ -1,14 +1,17 @@
 {
-    "liveSassCompile.settings.formats": [
-        {
-            "format": "compressed",
-            "extensionName": ".min.css",
-            "savePath": "/src/public/css",
-            "generateMap": true,
-        },
-    ],
-    "liveSassCompile.settings.forceBaseDirectory": "/src/css",
-    "liveSassCompile.settings.useNewCompiler": true,
-    "editor.formatOnPaste": true,
-    "editor.formatOnSave": true,
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "compressed",
+      "extensionName": ".min.css",
+      "savePath": "/src/public/css",
+      "generateMap": true,
+    },
+  ],
+  "liveSassCompile.settings.forceBaseDirectory": "/src/css",
+  "liveSassCompile.settings.useNewCompiler": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.detectIndentation": false,
+  "editor.tabSize": 2,
+  "files.insertFinalNewline": true,
 }

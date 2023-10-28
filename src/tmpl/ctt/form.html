@@ -1,17 +1,17 @@
 {{ define "form" }}
 <form action="/" method="POST" id="weekdays">
-    {{ range . }}
-        {{ $day := . }}
-        <div class="input-group">
-            <label for="{{$day}}_st" class="form-label">{{$day}}</label>
-            <input type="date" name="weekday" id="{{$day}}">
-            <input type="time" name="st_weekday" id="{{$day}}_st" />
-            <input type="time" name="ed_weekday" id="{{$day}}_ed" />
-        </div>
-    {{ end }}
-    <div class="action-group">
-        <button type="reset" class="outlined">クリア</button>
-        <button type="submit" id="generate" class="filled">生成</button>
-    </div>
+  {{ range . }}
+  {{ $day := . }}
+  <div class="input-group">
+    <label for="{{$day}}_st" class="form-label">{{$day}}</label>
+    <input type="date" name="weekday" id="{{$day}}">
+    <input type="time" name="st_weekday" id="{{$day}}_st" />
+    <input type="time" name="ed_weekday" id="{{$day}}_ed" />
+  </div>
+  {{ end }}
+  <div class="action-group">
+    <button type="reset" class="outlined">クリア</button>
+    <button type="submit" id="generate" class="filled">生成</button>
+  </div>
 </form>
 {{ end }}
